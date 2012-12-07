@@ -1,0 +1,33 @@
+--SUM N^2
+sumSqs 0 = 0
+sumSqs n = n^2 + sumSqs (n-1)
+
+
+--FILTER
+filtrarF :: [Int] -> (Int -> Bool) -> (Int -> Bool) -> ([Int],[Int])
+    filtrarF xs p q = (ys,zs)
+      where
+        ys = filter p xs
+        zs = filter q xs
+--or
+filtrarF2 xs p q = (ys,zs)
+      where
+        ys = [x | x <-xs, p x]
+        zs = [x | x <-xs, q x]
+
+
+
+--REPLACE, RECURSIVE
+replaceAll :: Eq a => a -> a -> [a] -> [a]
+    replaceAll _ _   [] = []
+    replaceAll x y (z:zs)
+      | x == z    = y : replaceAll x y zs
+      | otherwise = z : replaceAll x y zs
+
+
+
+--COUNT, RECURSIVE
+count _ [] = 0
+    count x (y:ys)
+      | x > y = 1 + count x ys
+      | otherwise = count x ys
