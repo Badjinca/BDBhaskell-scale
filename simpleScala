@@ -1,0 +1,26 @@
+object HelloWorld {
+def main(args: Array[String]) {
+println("Badjinca Baticam!")
+}
+
+}
+“”””””””””
+class ComplexNumber(real: Double, imaginary: Double) {
+def re() = real
+def im() = imaginary
+}
+object ComplexNumbers {
+def main(args: Array[String]) {
+val c = new ComplexNumber(1.2, 3.4)
+println("imaginary part: " + c.im())
+}
+
+}
+###############
+object IntegerReference {
+def main(args: Array[String]) {
+val cell = new Reference[Int]
+cell.set(13)
+println("Reference contains the half of " + (cell.get * 2))
+}
+}
